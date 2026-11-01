@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Machine Girl Homepage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="mono">
+    <nav id="mainNavbar" class="navbar sticky-top navbar-expand-lg navbar-bg-home" data-bs-theme="dark">
+        <div class="navbar-bg-tiles"></div>
+        <video class="navbar-bad-apple" muted playsinline preload="none"></video>
+
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="index.html" title="this took awfully long to animate ;(">
+                <img class="logo-normal" src="img/logo.png" alt="Machine Girl logo">
+                <img class="logo-hover" src="img/logo.gif" alt="">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto mono">
+                    <li class="nav-item"><a class="nav-link random-text" href="#about"><b><span>About Us</span></b></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link random-text" href="#discography"><b><span>Our
+                                    Stuff</span></b></a></li>
+                    <li class="nav-item"><a class="nav-link random-text" href="#news"><b><span>News
+                                    Flash!</span></b></a></li>
+                    <li class="nav-item"><a class="nav-link random-text" href="#events"><b><span>Live
+                                    Performances</span></b></a></li>
+                </ul>
+                <a class="btn my-2 my-sm-0 pixlar mg-btn mg-hover" href="contact_sheet.html"><b>Contact</b></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="anything-that-aint-navbar" data-bs-spy="scroll" data-bs-target="#mainNavbar"
+        data-bs-root-margin="0px 0px -25%" tabindex="0">
+        <div class="header-logo-wrapper">
+            <img src="img/header.png" alt="Machine Girl Header Logo" class="header-logo">
+            <div class="header-logo-text">
+                <p class="header-text mono unselectable">Don't worry, Machine Girl is not real. You can go back to
+                    sleep..</p>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0">
+            <div class="hero-image-wrapper click-through unselectable">
+                <img src="img/bg.png" class="user-select-none" draggable="false" alt="Hero Background">
+                <div class="noise-overlay"></div>
+            </div>
+        </div>
+
+        <section class="scroll-test-spacer">
+            <div class="container">
+                <svg id="about" class="stretch-heading scrollspy-target" viewBox="0 0 1000 100"
+                    style="--stretch-width: 86%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">About</text>
+                </svg>
+
+                <!-- description and bio -->
+                <div class="about-area mx-auto">
+                    <p class="sector-subtitle fw-bold">Machine Girl is</p>
+                    <div class="word-cloud" role="group"></div>
+                </div>
+
+                <svg class="stretch-heading" viewBox="0 0 1000 100" preserveAspectRatio="none"
+                    style="--stretch-width: 43%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000" lengthAdjust="spacingAndGlyphs">Us</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="scroll-test-spacer-mini discography-section">
+            <div class="container">
+                <svg id="discography" class="stretch-heading scrollspy-target" viewBox="0 0 1000 100"
+                    preserveAspectRatio="none" style="--stretch-width: 86%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000" lengthAdjust="spacingAndGlyphs">Our</text>
+                </svg>
+                <p class="sector-subtitle fw-bold">What we actually sound like</p>
+
+                <!-- discography carousel -->
+                <div class="discography-wrap">
+                    <div id="discographyCarousel" class="carousel slide">
+                        <div class="carousel-inner" id="discographySlides"></div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#discographyCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#discographyCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="discography-controls">
+                        <button id="discographyToggle" class="btn mg-alt-btn discography-toggle" type="button">
+                            toggle carousel
+                        </button>
+                        <span id="discographyCounter" class="discography-counter"></span>
+                    </div>
+
+                    <p id="discographyStatus" class="discography-status" role="status">
+                        dont forget to add Spotify embed links to machineGirlReleases in script.js
+                    </p>
+                </div>
+                <svg class="stretch-heading" viewBox="0 0 1000 100" preserveAspectRatio="none"
+                    style="--stretch-width: 43%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">Stuff</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="scroll-test-spacer-mini news-section mono">
+            <div class="container">
+                <svg id="news" class="stretch-heading scrollspy-target" viewBox="0 0 1000 100"
+                    preserveAspectRatio="none" style="--stretch-width: 86%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">News</text>
+                </svg>
+
+                <p class="sector-subtitle fw-bold no-nl">The things we did out of</p>
+                <p class="sector-subtitle-spacing-big fw-bold no-nl">infinite </p>
+                <p class="sector-subtitle fw-bold no-nl">potentialities</p>
+
+                <div class="row g-3 text-start mt-3">
+
+                    <!-- headline sidebar -->
+                    <div class="col-md-4">
+                        <div class="list-group news-list">
+
+                            <a class="list-group-item list-group-item-action active" data-bs-toggle="list"
+                                href="#news-entry-1">
+                                <div class="d-flex justify-content-between gap-2">
+                                    <strong>Lorem Ipsum Dolor Sit Amet</strong>
+                                    <small>01.10.26</small>
+                                </div>
+                                <small>Lorem ipsum dolor sit amet, consetetur sadipscing?</small>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list"
+                                href="#news-entry-2">
+                                <div class="d-flex justify-content-between gap-2">
+                                    <strong>Sean Got Lost Again</strong>
+                                    <small>29.09.26</small>
+                                </div>
+                                <small>We need YOUR help to find him!!</small>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list"
+                                href="#news-entry-3">
+                                <div class="d-flex justify-content-between gap-2">
+                                    <strong>Matt Got Kidnapped</strong>
+                                    <small>23.09.26</small>
+                                </div>
+                                <small>Matthew Stephenson jumped into mosh pit and didn't return to stage</small>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list"
+                                href="#news-entry-4">
+                                <div class="d-flex justify-content-between gap-2">
+                                    <strong>Matt Got Very Sick</strong>
+                                    <small>13.09.26</small>
+                                </div>
+                                <small>Concerts for the following next 2 weeks will be cancelled.</small>
+                            </a>
+
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list"
+                                href="#news-entry-5">
+                                <div class="d-flex justify-content-between gap-2">
+                                    <strong>New Homepage</strong>
+                                    <small>06.09.26</small>
+                                </div>
+                                <small>We got ourselves a new website!</small>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- article display -->
+                    <div class="col-md-8">
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade show active" id="news-entry-1">
+                                <div class="card bg-dark text-light border-secondary h-100">
+                                    <div class="card-body">
+                                        <span class="badge text-bg-mg-secondary">LOREM</span>
+                                        <h3 class="card-title mt-2">Lorem Ipsum Dolor</h3>
+                                        <p class="text-secondary">01.09.26</p>
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor invidunt ut labore et dolore
+                                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                            dolores et ea rebum. Stet clita kasd
+                                            gubergren, no sea takimata sanctus est
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor invidunt ut labore et dolore
+                                            magna aliquyam erat, sed diam
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                            eirmod tempor invidunt ut labore et dolore
+                                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                            dolores et ea rebum. Stet clita kasd
+                                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                            ipsum dolor sit
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="news-entry-2">
+                                <div class="card bg-dark text-light border-secondary h-100">
+                                    <div class="card-body">
+                                        <span class="badge text-bg-mg-secondary">NEWS</span>
+                                        <h3 class="card-title mt-2">This is the fourth time btw</h3>
+                                        <p class="text-secondary">29.09.26</p>
+
+                                        <p>
+                                            Dear fans who live in the neighbourhoods of Barcelona; we need your help
+                                            finding our dearest Sean again!!! We don't know how or where he walked off,
+                                            out of sight of both us and staff, but we sure do know that he ain't gonna
+                                            be calling us, due to his phone recently having been found in a back alley.
+                                        </p>
+                                        <p>
+                                            We would be thankful for all the help you would offer us, so make sure to
+                                            inform us if you find out anything on the topic 🙏🙏
+                                        </p>
+                                        <p>
+                                            Contact at machin3.gir1.i5.awesom3@gmail.com
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="news-entry-3">
+                                <div class="card bg-dark text-light border-secondary h-100">
+                                    <div class="card-body">
+                                        <span class="badge text-bg-mg-secondary">NEWS</span>
+                                        <h3 class="card-title mt-2">Give Him Back.</h3>
+                                        <p class="text-secondary">23.09.26</p>
+
+                                        <img src="img/news_consumed.jpg" width="300" height="400"
+                                            alt="dude wth we still need that guy">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="news-entry-4">
+                                <div class="card bg-dark text-light border-secondary h-100">
+                                    <div class="card-body">
+                                        <span class="badge text-bg-mg-secondary">NEWS</span>
+                                        <h3 class="card-title mt-2">Wish Him Luck Gng 😔✌️</h3>
+                                        <p class="text-secondary">13.09.26</p>
+
+                                        <p>
+                                            Due to unknown circumstances, the producer and lead vocalist, Matthew "Matt"
+                                            Stephenson got very sick, being unable to sing at his peak for approximately
+                                            a week or two. He's heavily bedridden, but it won't be fatal!
+                                        </p>
+                                        <p>
+                                            Doctors are still working on the diagnosis, but they're saying it's a likely
+                                            case of the very rare and unusual virus 'ligma'.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="news-entry-5">
+                                <div class="card bg-dark text-light border-secondary h-100">
+                                    <div class="card-body">
+                                        <span class="badge text-bg-mg-secondary">NEWS</span>
+                                        <h3 class="card-title mt-2">A New Beginning</h3>
+                                        <p class="text-secondary">06.09.26</p>
+
+                                        <p>
+                                            We got ourselves a new website made by some random dude online (he was cheap
+                                            and a fan). Welcome back home, we didn't miss you. If you're looking for the
+                                            merch, it's still on machin3gir1.com. Go there. Not here.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <svg class="stretch-heading" viewBox="0 0 1000 100" preserveAspectRatio="none"
+                    style="--stretch-width: 43%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">Flash!</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="scroll-test-spacer-mini h-auto min-vh-100 py-5 mono">
+            <div class="container">
+
+                <svg id="events" class="stretch-heading scrollspy-target" viewBox="0 0 1000 100"
+                    preserveAspectRatio="none" style="--stretch-width: 86%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">Live</text>
+                </svg>
+
+                <p class="sector-subtitle fw-bold">We will find you.</p>
+
+                <div class="events-container">
+                    <!-- month heading -->
+                    <div class="text-start mt-5 mb-3">
+                        <h2 class="mg-primary fw-bold mb-1">NOVEMBER 2026</h2>
+                        <small class="text-secondary">UPCOMING LIVE PERFORMANCES</small>
+                    </div>
+
+                    <!-- events table -->
+                    <div class="table-responsive">
+
+                        <table class="table table-borderless align-middle">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="border-bottom border-end table-h">
+                                        DATE
+                                    </th>
+
+                                    <th scope="col" class="border-bottom table-h">
+                                        EVENT
+                                    </th>
+
+                                    <th scope="col" class="border-bottom table-h">
+                                        VENUE
+                                    </th>
+
+                                    <th scope="col" class="border-bottom table-h">
+                                        INFO
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="border-end">
+                                        <div class="fs-4 fw-bold mg-primary">Nov 6</div>
+                                        <small class="text-secondary">Friday 17:30</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="fw-semibold mg-text">MIRA Festival 2026</div>
+                                        <small class="text-secondary">
+                                            Festival
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <div class="mg-text">Fira Montjuïc</div>
+                                        <small class="text-secondary">
+                                            Ciutat Vella, Spain
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-secondary small"><a target="_blank" class="neutral-link"
+                                                href="https://open.spotify.com/concert/5UW9LEbXPzKFj6GMBjQ0sg?si=7736164b66224019">Anthony
+                                                Rother, AMORE, Fennesz, Machine
+                                                Girl...</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border-end">
+                                        <div class="fs-4 fw-bold mg-primary">Nov 6</div>
+                                        <small class="text-secondary">Friday 18:00</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="fw-semibold mg-text">Positive Education Festival 2026</div>
+                                        <small class="text-secondary">
+                                            Festival
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <div class="mg-text">Cité du Design - Escapes réceptifs</div>
+                                        <small class="text-secondary">
+                                            Saint-étienne, France
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-secondary small"><a target="_blank" class="neutral-link"
+                                                href="https://open.spotify.com/concert/0sE1x8AJ5hOFTgI5hQPaFK?si=fbcd77ac6cbe4b72">A
+                                                Guy Called Gerald, Manuka Honey, Machine
+                                                Girl</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border-end">
+                                        <div class="fs-4 fw-bold mg-primary">Nov 9</div>
+                                        <small class="text-secondary">Monday 18:00</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="fw-semibold mg-text">Machine Girl</div>
+                                        <small class="text-secondary">
+                                            Tour
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <div class="mg-text">Proxima Club</div>
+                                        <small class="text-secondary">
+                                            Warszawa, Poland
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-secondary small"><a target="_blank" class="neutral-link"
+                                                href="https://open.spotify.com/concert/1zh8nedROBA5BRL5MXrmxz?si=92bd2d81d8244145">Machine
+                                                Girl, Nosgov</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border-end">
+                                        <div class="fs-4 fw-bold mg-primary">Nov 11</div>
+                                        <small class="text-secondary">Wednesday 19:30</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="fw-semibold mg-text">Machine Girl</div>
+                                        <small class="text-secondary">
+                                            Tour
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <div class="mg-text">IF Performance Hall Beşiktaş</div>
+                                        <small class="text-secondary">
+                                            İstanbul, Turkey
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-secondary small"><a target="_blank" class="neutral-link"
+                                                href="https://open.spotify.com/concert/6PLgIe9I9R5xJ1ddc3UA71?si=3d09f6e1126e4283">Machine
+                                                Girl EXCLUSIVE</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border-end">
+                                        <div class="fs-4 fw-bold mg-primary">Nov 13</div>
+                                        <small class="text-secondary">Friday 17:00</small>
+                                    </td>
+
+                                    <td>
+                                        <div class="fw-semibold mg-text">Machine Girl</div>
+                                        <small class="text-secondary">
+                                            Tour
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <div class="mg-text">Resort Safety</div>
+                                        <small class="text-secondary">
+                                            Ingoldmells, England
+                                        </small>
+                                    </td>
+
+                                    <td>
+                                        <span class="text-secondary small"><a target="_blank" class="neutral-link"
+                                                href="https://open.spotify.com/concert/13tAl9sMmOkqlqJb0KdsRw?si=3cf4420749854f0a">Machine
+                                                Girl EXCLUSIVE</a></span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <svg class="stretch-heading" viewBox="0 0 1000 100" preserveAspectRatio="none"
+                    style="--stretch-width: 43%; --stretch-min-width: 320px">
+                    <text class="unselectable" x="0" y="73" textLength="1000"
+                        lengthAdjust="spacingAndGlyphs">Performances</text>
+                </svg>
+            </div>
+        </section>
+
+        <footer
+            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between align-items-center gap-3 py-4 px-3">
+            <div class="footer-left unselectable">© 2026 Machine Girl. All rights reserved. Built with love in
+                Winterthur.</div>
+            <div
+                class="footer-right d-flex flex-wrap align-items-center justify-content-center justify-content-md-end gap-3">
+                <a class="link" href="dummy.html">Privacy Policy</a>
+                <span>•</span>
+                <a class="link" href="dummy.html">Terms of Use</a>
+                <span>•</span>
+                <a class="link" href="dummy.html">Cookie Settings</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
