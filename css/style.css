@@ -1042,12 +1042,13 @@ footer {
 
 .news-list {
     --bs-list-group-active-bg: var(--secondary);
-    --bs-list-group-active-border-color: var(--secondary);
+    --bs-list-group-active-border-color: transparent;
     --bs-list-group-active-color: #ffffff;
 
     --bs-list-group-bg: #10120c;
     --bs-list-group-color: #e5e5e5;
-    --bs-list-group-border-color: #343a2b;
+    --bs-list-group-border-color: transparent;
+    --bs-card-border-color: transparent;
 
     --bs-list-group-action-hover-bg: #25291e;
     --bs-list-group-action-hover-color: #ffffff;
