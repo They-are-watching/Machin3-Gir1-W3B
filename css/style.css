@@ -1061,7 +1061,8 @@ footer {
     --bs-table-bg: #10120c !important;
 }
 
-.events-container {
+.events-container,
+.news-stuff {
     border: 1px solid #ffffff;
     border-radius: 0;
     padding: clamp(1rem, 3vw, 2rem);
@@ -1084,4 +1085,35 @@ footer {
 .text-bg-mg-secondary {
     color: #fff !important;
     background-color: var(--more-color) !important;
+}
+
+.news-stuff .list-group,
+.news-stuff .list-group-item,
+.news-stuff .card,
+.news-stuff .badge {
+    border-radius: 0 !important;
+}
+
+.news-stuff {
+    align-items: stretch;
+}
+
+.news-stuff>.col-md-4,
+.news-stuff>.col-md-8 {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-stuff .tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-stuff .tab-pane.active {
+    flex: 1;
+}
+
+.news-stuff .tab-pane.active .card {
+    height: 100%;
 }
